@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Load the CSV file
-data_path = '/mnt/data/merged_health_1.csv'
+data_path = 'merged_health_1.csv'
 data = pd.read_csv(data_path)
 
 # Clean up URLs (remove trailing commas if any)
@@ -39,7 +39,7 @@ for index, row in duplicates.iterrows():
             print(f"Failed to process URL {url}: {e}")
 
 # Save the updated DataFrame to a new CSV file
-updated_data_path = '/mnt/data/updated_health_data.csv'
+updated_data_path = 'updated_health_data.csv'
 data.to_csv(updated_data_path, index=False)
 
 print(f"Updated data saved to {updated_data_path}")
